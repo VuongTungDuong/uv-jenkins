@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh ('docker compose build')
             }
         }
-        stage('Test') {
+        stage('Scan security') {
             steps {
-                echo 'Testing..'
+                echo "Scan ..."
             }
         }
         stage('Deploy') {
