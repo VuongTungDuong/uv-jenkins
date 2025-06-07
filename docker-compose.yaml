@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: api_redis
+    ports:
+      - 5050:5050
+    build:
+      context: .
+      dockerfile: dockerfile
+    restart: always
+    volumes:
+      - .:/app
