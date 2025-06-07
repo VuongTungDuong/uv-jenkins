@@ -12,6 +12,11 @@ def set_key(name: str):
     return {"message": "ok"}, 200
 
 
+@app.get("/")
+def home():
+    return {"message": "Hello"}, 200
+
+
 if "__main__" == __name__:
     host = "0.0.0.0"
     app.run(host, port=5050, debug=True)

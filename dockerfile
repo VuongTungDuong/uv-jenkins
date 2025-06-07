@@ -19,10 +19,11 @@ ENV PATH="/root/.local/bin/:$PATH"
 
 
 # Copy project files
-COPY pyproject.toml poetry.lock* ./
 
-# Copy toàn bộ source code vào container
 COPY . .
+COPY uv.lock uv.lock
+
+
 
 # Sync the project
 RUN uv sync --locked
@@ -32,6 +33,6 @@ RUN uv sync --locked
 EXPOSE 5050
 
 
-# Run the app (tuỳ theo entrypoint của bạn, ví dụ uvicorn, python ...)
-CMD [".venv/bin/python", "app.py"]
+# CMD [".venv/bin/python", "app.py"]
+CMD ["uv", "run", "app.py"]
 # CMD ["tail","-f" ,"/dev/null"]

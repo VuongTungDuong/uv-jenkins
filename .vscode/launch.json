@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Start",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}", // file entry point
+            "cwd": "${workspaceFolder}", // thư mục gốc chứa thư mục src/
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ]
+}

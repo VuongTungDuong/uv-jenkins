@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: dockerfile
+
     restart: always
     volumes:
-      - .:/app
+      - ./:/app
+      - /app/.venv/ # Không lấy thư mụv .venv ra ngoài
